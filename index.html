@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>eCommerce cart</title>
+  </head>
+  <body class="bg-secondary">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-11 mx-auto">
+                <div class="row mt-5 gx-3">
+                    <!-- left side div -->
+                    <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
+                        <!-- first product -->
+                        <div class="card pb-4">
+                            <h2 class="py-4 fw-bold">Cart (2 Items)</h2>
+                            <div class="row pl-3">
+                                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-item-center shadow product_img py-3">
+                                    <img src="Images/Gents1.jpg"  class="img-fluid" alt="image gents">
+                                </div>
+                                <!-- cart product details -->
+                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                    <div class="row">
+                                        <!-- product name -->
+                                        <div class="col-6 card-title">
+                                            <h1 class="mb-4 product_name">ABC</h1>
+                                            <p class="mb-2">Color - Mix</p>
+                                            <p class="mb-2">Size - Medium</p>
+                                            <p class="mb-3">Type - Sport</p>
+                                        </div>
+                                        <!-- quantity increase/decrease -->
+                                        <div class="col-6">
+                                            <ul class="pagination justify-content-end set_quantity">
+                                                <li class="page-item"><button class="page-link" onclick="decreaseNumber('textbox', 'itemval')" ><i class="fas fa-minus"></i></button></li>
+                                                <li class="page-item"><input type="text" class="page-link" id="textbox" value="0" ></li>
+                                                <li class="page-item"><button class="page-link" onclick="increaseNumber('textbox', 'itemval')"><i class="fas fa-plus"></i></button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- remove, wish and price -->
+                                    <div class="row">
+                                        <div class="col-8 d-flex justify-content-between remove_wish">
+                                            <p><i class="fas fa-trash"></i> Remove Item </p>
+                                            <p><i class="fas fa-heart"></i> Move to Wish List </p>
+                                        </div>
+                                        <div class="col-4 d-flex justify-content-end price_money">
+                                            <h3> $ <span id="itemval">0.00</span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <!-- Second product -->
+                        <div class="card pb-4">
+                            <div class="row pl-3">
+                                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-item-center shadow product_img py-3">
+                                    <img src="Images/Ladies.jpg"  class="img-fluid" alt="image ladies">
+                                </div>
+                                <!-- cart product details -->
+                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                    <div class="row">
+                                        <!-- product name -->
+                                        <div class="col-6 card-title">
+                                            <h1 class="mb-4 product_name">XYZ</h1>
+                                            <p class="mb-2">Color - Golden</p>
+                                            <p class="mb-2">Size - Small</p>
+                                            <p class="mb-3">Type - Formal</p>
+                                        </div>
+                                        <!-- quantity increase/decrease -->
+                                        <div class="col-6">
+                                            <ul class="pagination justify-content-end set_quantity">
+                                                <li class="page-item"><button class="page-link" onclick="decreaseNumber('textbox1', 'itemval1')" ><i class="fas fa-minus"></i></button></li>
+                                                <li class="page-item"><input type="text" class="page-link" id="textbox1" value="0" ></li>
+                                                <li class="page-item"><button class="page-link" onclick="increaseNumber('textbox1', 'itemval1')"><i class="fas fa-plus"></i></button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- remove, wish and price -->
+                                    <div class="row">
+                                        <div class="col-8 d-flex justify-content-between remove_wish">
+                                            <p><i class="fas fa-trash"></i> Remove Item </p>
+                                            <p><i class="fas fa-heart"></i> Move to Wish List </p>
+                                        </div>
+                                        <div class="col-4 d-flex justify-content-end price_money">
+                                            <h3> $ <span id="itemval1">0.00</span></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- right side div -->
+                    <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
+                        <div class="right_side p-3 bg-white shadow">
+                            <h2 class="product_name">Total Amount</h2>
+                            <div class="price_indiv d-flex justify-content-between">
+                                <p>Product Amount</p>
+                                <p>$ <span id="product_total_amt">0.00</span></p>
+                            </div>
+                            <div class="price_indiv d-flex justify-content-between">
+                                <p>Shipping Charge </p>
+                                <p>$ <span id="shipping_charge"> 5 </span></p>
+                            </div>
+                            <hr />
+                            <div class="total_amt d-flex justify-content-between fw-bold">
+                                <p>Total Amount (Adj. Tax & Discount)</p>
+                                <p>$ <span class="total_cart_amt" id="total_cart_amt">0.00</span></p>
+                            </div>
+                            <button class="btn btn-primary text-uppercase">Checkout</button>
+                        </div>
+                        <!-- coupon section -->
+                        <div class="discount_code mt-3 shadow">
+                            <div class="card">
+                                <div class="card-body">
+                                    <a class="d-flex justify-content-between" data-toggle="collapse" href="#collapse_coupon" aria-expanded="false" aria-controls="#collapse_coupon">
+                                        Add a discount code 
+                                        <span class="justify-content-between"><i class="fas fa-chevron-down pt-1"></i></span>
+                                    </a>
+                                    <div class="collapse" id="collapse_coupon">
+                                        <div class="mt-3">
+                                            <input type="text" id="discount_code1" class="form-control fw-bold"  placeholder="Enter coupon code">
+                                            <small id="error_trw" class="mt-3 text-dark ">Code is MANGHI (10% discount on total amount)</small>
+                                        </div>
+                                        <button class="btn btn-success btn-sm mt-3" onclick="discount_code()">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- expected delivery date -->
+                        <div class="mt-3 shadow p-3 bg-white">
+                            <div class="pt-4">
+                                <h5 class="mb-4">Expected Delivery Date</h5>
+                                <p>25 Dec 20 - 29 Dec 20</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper.js and Bootstrap JS
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-t6I8D5dJmMXjCsRLhSzCltuhNZg6P10kE0m0nAncLUjH6GeYLhRU1zfLoW3QNQDF" crossorigin="anonymous"></script>
+    -->
+    <script src="app.js"></script>
+  </body>
+</html>
